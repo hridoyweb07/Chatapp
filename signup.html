@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO sign up</title>
+    <link rel="shortcut icon" href="images/Graphicloads-100-Flat-2-Chat-2.ico">
+   
+    <style>
+
+#divSignUp{
+	background:#1F9092 ;
+	display:inlone-block;
+	width:200px;
+	color:white;
+	padding:10px;
+	height:150px;
+	margin:0 auto;
+	box-shadow:0 0 15px black;
+
+	}	  
+input{	
+	margin-top:5px;
+} 
+#txtUser{	
+	margin-top:5px;
+	height:40px;
+} 
+
+#btnSignUp{
+	background:#BAF9FA ;
+	box-shadow:0 0 5px white;
+}
+
+    </style>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(function () {
+           $('#btnSignUp').click(function(){
+                  var oUserInfo = {
+                    "userId": $('#txtUser').val()
+                };
+              sessionStorage.setItem('userInfo', JSON.stringify(oUserInfo));
+              window.location.replace("http://localhost:3000/chat");
+            });
+        });
+     </script>
+</head>
+<body>
+    <div id="divSignUp">
+        <label>Name:</label><input type="text" id="txtUser" />
+        <input type="button" id="btnSignUp" value="Sign Up">
+    </div>
+</body>
+</html>
